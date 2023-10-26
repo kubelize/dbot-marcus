@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dbot-marcus-deployment
+  namespace: dbot-marcus
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dbot-marcus
+  template:
+    metadata:
+      labels:
+        app: dbot-marcus
+    spec:
+      containers:
+      - name: dbot-marcus
+        image: moffoso/dbot-marcus:0.1.0
+        imagePullPolicy: Always
+        volumeMounts:
+        - name: config-volume
+          mountPath: /app
+        securityContext:
+          runAsUser: 1000
+      volumes:
+      - name: config-volume
+        configMap:
+          name: dbot-config
