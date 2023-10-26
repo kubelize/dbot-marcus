@@ -1,3 +1,4 @@
+# example cm
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -5,7 +6,6 @@ metadata:
   namespace: dbot-marcus
 data:
   schaebigctl.yaml: |
-    discordToken: "MTEzMTA4MjE1MDM5ODE1Mjc0NA.G7GWX5.C55Uzg8baypLy2C0z1rsj4HbVJYyf2-LLU4M_I"
-    chatGPTToken: "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"
+    discordToken: "your_discord_token"
+    chatGPTToken: "your_openai_api_token"
     maxTimeoutMinutes: "0"
-# Replace these with your own keys, these are invalid examples :P

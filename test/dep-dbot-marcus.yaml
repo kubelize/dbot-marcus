@@ -1,3 +1,4 @@
+# example deployment
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -15,11 +16,13 @@ spec:
     spec:
       containers:
       - name: dbot-marcus
-        image: moffoso/dbot-marcus:0.1.0
+        image: moffoso/dbot-marcus:0.1.1
+        # command: ["/bin/sleep", "infinity"]
         imagePullPolicy: Always
         volumeMounts:
         - name: config-volume
-          mountPath: /app
+          mountPath: /app/schaebigctl.yaml
+          subPath: schaebigctl.yaml
         securityContext:
           runAsUser: 1000
       volumes:
