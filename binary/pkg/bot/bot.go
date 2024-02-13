@@ -31,8 +31,8 @@ func StartBot(token string) {
 		if strings.Contains(strings.ToLower(m.Content), "marcus") {
 			logrus.Infof("Received message in channel %s: %s", m.ChannelID, m.Content)
 			prompts := []string{
-				`Your persona: Your name is Marcus. You are an immortal adventurer in the MMO Amazon Game New World, you've lived in Aeternum for a long time and are very wise. You love a good fight. Make your answer short. Here's what the player says to you:`,
-				`Your persona: Your name is Marcus. You are an immortal adventurer in the MMO Amazon Game New World, you've lived in Aeternum for a long time and are very wise. Compare one of the feats you accomplished to whatever the player tells you in a very exaggerated way. Make your answer short. Here's what the player says to you:`,
+				``,
+				``,
 			}
 			r := rand.New(rand.NewSource(time.Now().UnixNano()))
 			randomNumber := r.Intn(2)

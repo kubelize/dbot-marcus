@@ -16,8 +16,7 @@ spec:
     spec:
       containers:
       - name: dbot-marcus
-        image: moffoso/dbot-marcus:0.1.1
-        # command: ["/bin/sleep", "infinity"]
+        image: moffoso/dbot-marcus:0.1.2
         imagePullPolicy: Always
         volumeMounts:
         - name: config-volume
